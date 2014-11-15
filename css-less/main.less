@@ -1,0 +1,135 @@
+/* Less */
+@screen-sm-min: 480px;
+/*@screen-md-min: 768px;*/
+@screen-md-min: 992px;
+@screen-lg-min: 1002px;
+
+
+@vermelho-escuro: #7e1b1b;
+@vermelho-claro: #ea2a2a;
+@vermelho-muito-claro: #ffc5c5;
+@verde: #5cb384;
+
+
+body {
+
+}
+
+#webdoor {
+	height: 712px;
+	position: relative;
+	
+	text-align: center;
+	background: url(../img/background-webdoor.png) repeat-x top;
+	
+	h1 {
+		width: 294px;
+		height: 167px;
+		margin: 41px auto 80px;
+
+		text-indent: -9999px;
+		background: url(../img/logo.png) no-repeat;
+	}
+
+	p.lead {
+		font-size: 24px;
+		color: @vermelho-escuro;
+	}
+
+	#enviar-jogo {		
+		width: 280px;
+		height: 71px;
+		margin: 0 auto 25px;
+
+		/*text-indent: -9999px;*/
+		/*background: url(../img/btn-envie-webdoor.png) 0 0 no-repeat;*/
+
+
+		background: @vermelho-claro;
+		border: 3px dotted @verde;
+		color: white;
+		font-size: 30px;
+
+
+		&:hover {
+			/*background: url(../img/btn-envie-webdoor.png) 0 -71px;*/
+			background: @vermelho-escuro;
+		}
+	}
+
+	#saiba-mais, #galeria {
+		color: @vermelho-claro;
+		border: 0;
+		border-radius: 0;
+		padding: 10px 20px;		
+
+		background-color: white;
+
+		&:hover {			
+			color: @vermelho-escuro;
+			background: @vermelho-muito-claro;
+		}
+	}
+
+	#saiba-mais {
+		margin-right: 30px;
+	}
+
+	.papai-noel {
+		width: 249px;
+		height: 397px;
+
+		position: absolute;
+		top: 240px;
+		left: 2%;
+		z-index: 5;
+
+		background: url(../img/papai-noel-webdoor.png) no-repeat;
+	}
+
+	.janela {
+		width: 243px;
+		height: 560px;
+
+		position: absolute;
+		top: 0;
+		left: -5%;
+		z-index: 2;
+
+		background: url(../img/janela-webdoor.png) top no-repeat;
+	}
+
+	.arvore {
+		width: 296px;
+		height: 412px;
+
+		position: absolute;
+		top: 228px;
+		right: 10px;
+		z-index: 2;
+
+		background: url(../img/arvore-webdoor.png) top no-repeat;
+	}
+
+
+
+}
+
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+	.janela {
+		/*left: -30%;*/
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { 
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+
+}
+
