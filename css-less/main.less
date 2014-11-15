@@ -1,6 +1,6 @@
 /* Less */
-@screen-sm-min: 480px;
-/*@screen-md-min: 768px;*/
+@screen-xs-min: 480px;
+@screen-sm-min: 768px;
 @screen-md-min: 992px;
 @screen-lg-min: 1002px;
 
@@ -13,6 +13,10 @@
 
 body {
 
+}
+
+h2 {
+	margin: 40px 0 45px;
 }
 
 #webdoor {
@@ -36,7 +40,7 @@ body {
 		color: @vermelho-escuro;
 	}
 
-	#enviar-jogo {		
+	.enviar-jogo {		
 		width: 280px;
 		height: 71px;
 		margin: 0 auto 25px;
@@ -57,7 +61,7 @@ body {
 		}
 	}
 
-	#saiba-mais, #galeria {
+	.saiba-mais, .galeria {
 		color: @vermelho-claro;
 		border: 0;
 		border-radius: 0;
@@ -111,25 +115,282 @@ body {
 		background: url(../img/arvore-webdoor.png) top no-repeat;
 	}
 
+}
 
+
+#sobre-o-projeto {
+	clear: both;
+	position: relative;
+	color: white;
+	background: #385005;	
+
+	&:before {
+		content: "";
+		width: 100%;
+		height: 253px;
+		position: absolute;
+		top: 0;
+		z-index: 1;
+		background: url(../img/sobre-top-background.png) top repeat-x;
+	}
+
+	h2 {
+		width: 414px;
+		height: 130px;
+		text-indent: -9999px;
+		background: url(../img/sobre-titulo.png) no-repeat;
+
+	}
+
+	a {
+		color: white;
+		text-decoration: underline;
+
+		&:hover {
+			color: @verde;
+		}
+	}
+
+	.voluntario {
+		padding-bottom: 50px;
+
+	}
+
+	.nao-voluntario {
+		height: 300px;
+		padding-top: 30px;
+		background: #212f04;
+	}
+
+	.papai-noel {
+		width: 274px;
+		height: 496px;
+
+		position: absolute;
+		right: 10%;
+		top: 270px;
+		z-index: 5;
+
+		background: url(../img/sobre-papai-noel.png) no-repeat;
+	}
 
 }
 
 
 
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) {
-	.janela {
-		/*left: -30%;*/
+#galeria {
+	background: url(../img/galeria-background.png);
+	padding-bottom: 80px;
+	position: relative;
+
+	&:before {
+		display: block;
+		position: absolute;
+		content: "";
+		top: 20px;
+		width: 100%;
+		height: 152px;
+		background: url(../img/pisca-pisca.png) repeat-x;
+	}
+
+	h2 {
+		display: block;
+		width: 300px;
+		height: 132px;
+		text-indent: -9999px;
+		background: url(../img/galeria-titulo.png) no-repeat;		
+	}
+
+
+	.box {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		padding:20px;
+		border: 3px dotted white;	
+		color: white;
+		background: @vermelho-claro;
+	}
+
+
+	.jogo {
+		img {
+			width: 100%;
+		}
+
+		iframe {
+			width: 100%;
+			margin-bottom: 50px;
+		}
+	}
+
+}
+
+
+
+
+#rodape {		
+	position: relative;
+	padding-top: 250px;
+
+	color: white;
+	background: #3cbac8;
+
+
+	&:before {
+		display: block;
+		position: absolute;
+		content: "";
+		top: 20px;
+		width: 100%;
+		height: 152px;
+		background: url(../img/pisca-pisca.png) repeat-x;
+	}
+
+	.papai-noel {
+		width: 137px;
+		height: 200px;
+
+		position: absolute;
+		top: 80px;
+		left: 10%;
+
+		background: url(../img/rodape-papai-noel.png) no-repeat;
+	}
+
+	.infos {
+		background: #38aab7;
+		height: 150px;
+	}
+
+	.patrocinio {
+
+	}
+
+	.legal {
+		text-align: right;
+	}
+
+}
+
+
+
+
+/*==========  MEDIA QUERIES  ================*/
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+	p.lead {
+		
 	}
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) { 
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+	p.lead {
+		padding: 0 80px;
+	}
+
+
+	.janela {
+		/*left: -30%;*/
+	}
+
+	#galeria {
+		.box {
+		/*	margin-bottom: 50px;*/
+		}
+
+		.jogo iframe {
+			min-height: 290px;
+		}
+	}
 }
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) {
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	p.lead {
+		padding: 0 300px;
+	}
+
+
+	.janela {
+		/*left: -30%;*/
+	}
+
+	#galeria {
+		.box {
+		/*	margin-bottom: 50px;*/
+		}
+
+		.jogo iframe {
+			height: 262px;
+		}
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+	#galeria {
+		.box {
+		/*	margin-bottom: 50px;*/
+		}
+
+		.jogo iframe {
+			height: 230px;
+		}
+	}
 
 }
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+	#sobre-o-projeto {
+		.papai-noel {
+			top: 200px;
+		}
+	}
+
+	#galeria {
+		.jogo iframe {
+			height: 280px;
+		}
+	}
+
+
+}
+
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	p.lead {
+		padding: 0 0;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+    
+}
+
 
