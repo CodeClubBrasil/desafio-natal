@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">        
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
         <link rel="stylesheet/less" type="text/css" href="css-less/main.less" />
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -19,7 +20,82 @@
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->        
+        <![endif]-->   
+
+        <!-- Modal -->
+        <div id="abrirFormulario" class="white-popup mfp-hide">
+          
+            <h3 id="myModalLabel">Formulário de inscrição</h3>
+
+            <p>Para inscrever o jogo, basta preencher os campos abaixo, e todos são obrigatórios.<br>
+            Não se esqueça de baixar o KIT de elementos (sprites) para utilizar o seu jogo, <a href="#" target="_blank">clique aqui</a>.<br></p>
+            <br>
+
+            <div class="formulario">
+
+                <form id="enviarInscricao" name="enviarInscricao" method="" action="" class="form-horizontal">
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3" for="inputJogoNome">Nome do seu JOGO:</label>
+                        <div class="controls col-xs-9">
+                            <input type="text" id="inputJogoNome" class="form-control" placeholder="...">
+                        </div>
+                    </div>                    
+
+                    <div class="form-group">                        
+                        <label class="control-label col-xs-3" for="inputJogoURL">Link do JOGO</label>
+                        <div class="controls col-xs-9">
+                            <input type="text" id="inputJogoURL" class="form-control" placeholder="URL do jogo no Scratch Online">          
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3" for="inputCodeClub">Nome do Code Clube:</label>
+                        <div class="controls col-xs-9">
+                            <input type="text" id="inputCodeClub" class="form-control" placeholder="Code Club...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">                        
+                        <label class="control-label col-xs-3" for="InputNome">Seu nome:</label>
+                        <div class="controls col-xs-9">
+                            <input type="text" id="InputNome" class="form-control" placeholder="Digite seu nome e sobrenome">          
+                        </div>
+                    </div>
+
+                    <div class="form-group">                        
+                        <label class="control-label col-xs-3" for="InputEmail">Seu e-mail:</label>
+                        <div class="controls col-xs-9">
+                            <input type="email" id="InputEmail" class="form-control" placeholder="algumacoisa@...">          
+                        </div>
+                    </div>
+
+                    <div class="col-xs-offset-3" style="padding-left: 7px;">
+                        <div class="checkbox">
+                            <label for="inputTermos">
+                                <input type="checkbox" id="inputTermos">
+                                Li e aceito os <a href="#" target="_blank">termos de uso</a>.
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="pull-right">
+                        <input type="submit" class="btn btn-warning btn-lg" value="Enviar inscrição">
+                    </div>
+
+
+                </form>
+
+                <div class="clearfix"></div>
+
+            </div>
+          
+        </div>
+
+
+
 
         <div id="webdoor">
 
@@ -27,11 +103,13 @@
 
                 <h1>Desafio de Natal</h1>
 
+                <div class="logo-codeclub"></div>
+
                 <div class="mensagem-principal">                
-                    <p class="lead">E aí, já pensou ter um jogo seu como lição do <strong>Code Club Brasil</strong>?</p>                    
-                    <button class="enviar-jogo btn">envie seu jogo</button><br>
-                    <button class="saiba-mais btn">Saiba mais</button>
-                    <button class="galeria btn">Galeria</button>
+                    <p class="lead">E aí, já pensou ter um jogo seu como lição do <strong>Code Club Brasil</strong>?</p>                                        
+                    <button class="enviar-jogo btn open-popup-link" role="button" data-mfp-src="#abrirFormulario">envie seu jogo</button><br>
+                    <button class="saiba-mais btn btn-link" href="#sobre-o-projeto">Saiba mais</button>
+                    <button class="galeria btn btn-link" href="#galeria">Galeria</button>
                 </div>
 
                 <div class="papai-noel hidden-sm  hidden-xs"></div>
@@ -111,20 +189,58 @@
                     <div class="jogo col-md-4 col-sm-6 col-xs-12">
                         <iframe allowtransparency="true" width="100%" class="col-md-4 col-sm-6 col-xs-12"
                         src="http://scratch.mit.edu/projects/embed/31728906/?autostart=false" frameborder="0" allowfullscreen></iframe>
-    
-                    </div>
+
+                        <div class="meta pull-left">
+                            <div class="titulo">Mata barata</div>
+                            <div class="infos">
+                                Nome do clube: <strong>Code Code São Paulo</strong><br>
+                                Club leader: <strong>Luis Moneda</strong>
+                            </div>
+                        </div>
+
+                        <div class="acoes  pull-right">
+                            <a href="#" class="icone compartilhar">Compartilhar</a>
+                            <a href="#" class="icone curtir">000</a>
+                        </div>
+                    </div> <!-- .jogo -->   
+
 
                     <div class="jogo col-md-4 col-sm-6 col-xs-12">
                         <iframe allowtransparency="true" width="100%" class="col-md-4 col-sm-6 col-xs-12"
-                        src="http://scratch.mit.edu/projects/embed/30551750/?autostart=false" frameborder="0" allowfullscreen></iframe>
-    
-                    </div>
+                        src="http://scratch.mit.edu/projects/embed/31728906/?autostart=false" frameborder="0" allowfullscreen></iframe>
+
+                        <div class="meta pull-left">
+                            <div class="titulo">Mata barata</div>
+                            <div class="infos">
+                                Nome do clube: <strong>Code Code São Paulo</strong><br>
+                                Club leader: <strong>Luis Moneda</strong>
+                            </div>
+                        </div>
+
+                        <div class="acoes  pull-right">
+                            <a href="#" class="icone compartilhar">Compartilhar</a>
+                            <a href="#" class="icone curtir">000</a>
+                        </div>
+                    </div> <!-- .jogo -->   
 
                     <div class="jogo col-md-4 col-sm-6 col-xs-12">
                         <iframe allowtransparency="true" width="100%" class="col-md-4 col-sm-6 col-xs-12"
-                        src="http://scratch.mit.edu/projects/embed/34474848/?autostart=false" frameborder="0" allowfullscreen></iframe>
-    
-                    </div>
+                        src="http://scratch.mit.edu/projects/embed/31728906/?autostart=false" frameborder="0" allowfullscreen></iframe>
+
+                        <div class="meta pull-left">
+                            <div class="titulo">Mata barata</div>
+                            <div class="infos">
+                                Nome do clube: <strong>Code Code São Paulo</strong><br>
+                                Club leader: <strong>Luis Moneda</strong>
+                            </div>
+                        </div>
+
+                        <div class="acoes  pull-right">
+                            <a href="#" class="icone compartilhar">Compartilhar</a>
+                            <a href="#" class="icone curtir">000</a>
+                        </div>
+                    </div> <!-- .jogo -->   
+
                 </div>
 
             </div>
@@ -136,17 +252,26 @@
 
             <div class="papai-noel hidden-xs"></div>
 
+            <div class="logo-codeclub"></div>
+
             <div class="infos">
                 <div class="container">
                     <div class="patrocinio pull-left">
-
+                        <h5>Apoio</h5>
+                        <a href="#"><img src="http://placehold.it/100x50"></a>
+                        <a href="#"><img src="http://placehold.it/100x50"></a>
                     </div>
 
                     <div class="legal pull-right">
-
+                        <p><a href="http://www.codeclubbrasil.org" target="_blank"><strong>Code Club Brasil</strong></a> é uma organização sem fins lucrativos<br>
+                        membro do <a href="http://www.codeclubworld.org" target="_blank">Code Club World</a> que dá as crianças a oportunidade de aprender a programar.</p>
+                        <p>Ilustrações de <a href="http://felipefernandes.nu" target="_blank">Felipe Fernandes</a> utilizadas com sua autorização. Inspirados na arte de <a href="#" target="_blank">Timothy Winchester</a>.</p>
                     </div>
                 </div>
+                <div class="clearfix"></div>
             </div>
+
+
 
         </div>
 
@@ -161,7 +286,12 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/less.min.js"></script>
+        <script type="text/javascript" src="js/less.min.js"></script>        
+        <script type="text/javascript" src="js/vendor/jquery.inview.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.localscroll-1.2.7-min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.scrollTo-1.4.3.1-min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.magnific-popup.min.js"></script>
+
         <script src="js/main.js"></script>
 
         <script>

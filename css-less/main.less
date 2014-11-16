@@ -35,6 +35,16 @@ h2 {
 		background: url(../img/logo.png) no-repeat;
 	}
 
+	.logo-codeclub {
+		width: 96px;
+		height: 60px;
+		position: fixed;
+		right: 30px;
+		top: 20px;
+		z-index: 999;
+		background:url(../img/logo-codeclub-peq.png) no-repeat;
+	}
+
 	p.lead {
 		font-size: 24px;
 		color: @vermelho-escuro;
@@ -213,13 +223,64 @@ h2 {
 
 
 	.jogo {
+
+		color: #913609;
+		background: #f9cb8f;
+		padding: 20px 0 20px 20px;
+		margin-bottom: 50px;
+		text-align: center;
+
+
+		.titulo {
+			font-size: 18px;
+		}
+
+		.infos {
+			font-size: 12px;
+		}
+
+		.meta {
+			text-align: left;
+		}
+
+		.acoes {
+			margin-right: 20px;
+		}
+
+		.icone {
+			display: inline-block;
+			min-width: 32px;
+			min-height: 32px;
+			color: white;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: none;				
+			}
+			
+
+			&.compartilhar {
+				background: url(../img/galeria-icones.png) 5px 0 no-repeat;
+				text-indent: -9999px;
+			}
+
+			&.curtir {
+				background: url(../img/galeria-icones.png) -30px 0 no-repeat;
+				font-size: 10px;
+				padding-top: 5px;
+			}
+		}
+
+
 		img {
 			width: 100%;
 		}
 
 		iframe {
 			width: 100%;
-			margin-bottom: 50px;
+			margin-bottom: 20px;
+			margin-right: -15px;
+			margin-left: -15px;
 		}
 	}
 
@@ -257,44 +318,124 @@ h2 {
 		background: url(../img/rodape-papai-noel.png) no-repeat;
 	}
 
+	.logo-codeclub {
+		width: 159px;
+		height: 100px;
+		position: absolute;
+		top: 110px;
+		left: 50%;
+		margin-left: -80px;
+		background: url(../img/logo-codeclub-grd.png) no-repeat;	
+	}
+
 	.infos {
 		background: #38aab7;
-		height: 150px;
+		min-height: 150px;
+		padding-bottom: 40px;
+
+		a {
+			color: white;
+			text-decoration: underline;
+
+			&:hover {
+				color: @vermelho-claro;
+			}
+		}
 	}
 
 	.patrocinio {
-
+		padding-top: 10px;
 	}
 
 	.legal {
+		padding-top: 40px;
 		text-align: right;
+		font-size: 10px;
 	}
 
 }
 
+
+
+#abrirFormulario {
+	position: relative;
+	background: #FFF;
+	padding: 20px;
+	width: auto;
+	max-width: 720px;
+	margin: 20px auto;
+
+	h3 {
+		text-align: center;
+		font-size: 35px;
+		/*margin-top: 50px;
+		margin-bottom: 50px;*/
+		padding:20px;
+		border: 3px dotted white;	
+		color: white;
+		background: @vermelho-claro;		
+	}
+}
+
+
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}
 
 
 
 /*==========  MEDIA QUERIES  ================*/
-/*==========  Mobile First Method  ==========*/
 
-/* Custom, iPhone Retina */ 
-@media only screen and (min-width : 320px) {
-	p.lead {
-		
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+	#sobre-o-projeto {
+		.papai-noel {
+			top: 200px;
+		}
 	}
+
+	#galeria {
+		.jogo iframe {
+			height: 280px;
+		}
+	}
+
 }
 
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
-	p.lead {
-		padding: 0 80px;
-	}
-
-
-	.janela {
-		/*left: -30%;*/
-	}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 1024px) {
 
 	#galeria {
 		.box {
@@ -302,13 +443,19 @@ h2 {
 		}
 
 		.jogo iframe {
-			min-height: 290px;
+			height: 230px;
 		}
+	}
+
+	p.lead {
+		padding: 0 200px;
+
 	}
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
+@media only screen and (max-width : 768px) {
+
 	p.lead {
 		padding: 0 300px;
 	}
@@ -327,69 +474,80 @@ h2 {
 			height: 262px;
 		}
 	}
-}
 
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-
-	#galeria {
-		.box {
-		/*	margin-bottom: 50px;*/
-		}
-
-		.jogo iframe {
-			height: 230px;
+	#webdoor {
+		.logo-codeclub {
+			position: absolute;
 		}
 	}
-
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-
-	#sobre-o-projeto {
-		.papai-noel {
-			top: 200px;
-		}
-	}
-
-	#galeria {
-		.jogo iframe {
-			height: 280px;
-		}
-	}
-
-
-}
-
-
-
-/*==========  Non-Mobile First Method  ==========*/
-
-/* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px) {
-
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
-	p.lead {
-		padding: 0 0;
-	}
-}
-
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
 
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
 
+	#sobre-o-projeto h2 {
+		background-size: 260px;
+		height: 86px;
+	}
+
+	p.lead {
+		padding: 0 20px;
+	}
+
+
+	.janela {
+		/*left: -30%;*/
+	}
+
+	#galeria {
+
+		h2 {
+			background-size: 260px;
+		}
+
+		.box {
+		/*	margin-bottom: 50px;*/
+		}
+
+		.jogo {
+			position: relative;
+			margin-bottom: 20px;
+
+			.meta {
+				width: 74%;
+			}
+
+			.acoes {
+				margin-right: 0;
+				position: absolute;
+				bottom: 45px;
+				right: 10px;
+			}
+			
+			iframe {			
+				margin-left: -6px;
+			}
+		}
+	}
+
+	#rodape {
+
+		.patrocinio, .legal {
+			clear: both;
+			float: none !important;
+			text-align: center;
+		}
+	}
+
 }
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
+
+	h2 {
+		background-size: 260px;
+	}
     
 }
 
